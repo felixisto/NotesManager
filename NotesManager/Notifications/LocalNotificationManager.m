@@ -146,7 +146,7 @@
 }
 
 - (void)onItemDelete:(NSString*)itemName {
-    [self dequeueNotificationForTask:itemName removeDelivered:true];
+    
 }
 
 - (void)onRepositoryDataChanged {
