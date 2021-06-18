@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="NSKeyedUnarchiveFromDataTransformerName" customClassName="UIColor"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserTask" inverseName="category" inverseEntity="UserTask"/>
+    </entity>
+    <entity name="UserTask" representedClassName="UserTask" syncable="YES" codeGenerationType="class">
+        <attribute name="expiration" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notifyOnExpiration" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="tasks" inverseEntity="Category"/>
+    </entity>
+    <fetchRequest name="CategoriesByName" entity="Category" predicateString="name == $NAME"/>
+    <fetchRequest name="UserTasksByCategoryName" entity="UserTask" predicateString="category.name == $NAME"/>
+    <fetchRequest name="UserTasksByName" entity="UserTask" predicateString="name == $NAME"/>
+    <elements>
+        <element name="Category" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="UserTask" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
