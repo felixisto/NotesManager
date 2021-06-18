@@ -141,7 +141,7 @@
 }
 
 - (void)onItemDelete:(NSString*)itemName {
-    [self reloadData];
+    
 }
 
 - (void)onRepositoryDataChanged {

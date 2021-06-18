@@ -62,7 +62,7 @@
     UserTask* task = [[UserTask alloc] initWithContext:self.mainContext];
     task.name = name;
     
-    [self saveContext];
+    [self saveChanges];
     [self alertListenersOfTaskCreate:name];
     
     return task;
@@ -116,7 +116,7 @@
     
     [self.mainContext deleteObject:task];
     
-    [self saveContext];
+    [self saveChanges];
     [self alertListenersOfTaskDelete:name];
 }
 
@@ -126,7 +126,6 @@
     }
     
     [self saveContext];
-    
     [self alertListenersOfDataChanged];
 }
 
