@@ -135,10 +135,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray<TaskViewItem*>* tasks = indexPath.section == 0 ? self.presenter.activeTasks : self.presenter.inactiveTasks;
-    
     TaskCell* cell = (TaskCell*)[tableView dequeueReusableCellWithIdentifier:TaskCell_CELL_ID];
-    TaskViewItem* itemData = [tasks objectAtIndex:indexPath.row];
+    TaskViewItem* itemData = [self taskAtIndex:indexPath];
     cell.nameLabel.text = itemData.name;
     cell.solidColorView.backgroundColor = itemData.categoryColor;
     [cell setExpiration:itemData.expiration];

@@ -15,10 +15,15 @@
 @protocol TasksRepository <NSObject>
 
 - (BOOL)isNameTaken:(nonnull NSString*)name;
+
+// Changes are saved automatically.
 - (nullable UserTask*)buildNewTaskWithName:(nonnull NSString*)name;
+
 - (nullable UserTask*)taskByName:(nonnull NSString*)name;
 - (nonnull NSArray<UserTask*>*)allTasks;
 - (nonnull NSArray<UserTask*>*)tasksByCategoryName:(nonnull NSString*)categoryName;
+
+// Changes are saved automatically.
 - (void)deleteTaskByName:(nonnull NSString*)name;
 
 - (void)saveChanges;

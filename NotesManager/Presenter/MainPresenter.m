@@ -126,7 +126,6 @@
 
 - (void)onTaskDelete:(TaskViewItem*)task {
     [self.tasksRepo deleteTaskByName:task.name];
-    [self.tasksRepo saveChanges];
 }
 
 - (void)onExpireTask:(TaskViewItem*)task {
@@ -142,7 +141,7 @@
 }
 
 - (void)onItemDelete:(NSString*)itemName {
-    
+    [self reloadData];
 }
 
 - (void)onRepositoryDataChanged {

@@ -15,7 +15,10 @@
 @protocol CategoriesRepository <NSObject>
 
 - (BOOL)isNameTaken:(nonnull NSString*)name;
+
+// Changes are saved automatically.
 - (nullable Category*)buildNewCategoryWithName:(nonnull NSString*)name;
+
 - (nonnull NSArray<Category*>*)allCategories;
 - (nullable Category*)categoryByName:(nonnull NSString*)name;
 

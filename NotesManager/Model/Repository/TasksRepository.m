@@ -108,7 +108,13 @@
 }
 
 - (void)deleteTaskByName:(nonnull NSString*)name {
-    [self.mainContext deleteObject:[self taskByName:name]];
+    UserTask* task = [self taskByName:name];
+    
+    if (task == nil) {
+        return;
+    }
+    
+    [self.mainContext deleteObject:task];
     
     [self saveContext];
     [self alertListenersOfTaskDelete:name];
