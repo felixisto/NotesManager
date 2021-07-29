@@ -279,7 +279,6 @@
 				994C71D3267A647C00980B7A /* Parser */,
 				99BDA39A267B741B004030A2 /* Validator */,
 				99052CF2267A7029008DEDE1 /* Notifications */,
-				994C71D1267A647500980B7A /* Utilities */,
 				994C71A9267A646B00980B7A /* LaunchScreen.storyboard */,
 				994C71A7267A646B00980B7A /* Assets.xcassets */,
 				994C71AC267A646B00980B7A /* Info.plist */,
@@ -319,13 +318,6 @@
 				994C71F2267A672B00980B7A /* EditTaskPresenter.m */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		994C71D1267A647500980B7A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		994C71D2267A647900980B7A /* View */ = {
